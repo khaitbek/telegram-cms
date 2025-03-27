@@ -1,20 +1,12 @@
 import type { NextConfig } from "next";
-import "@/shared/config/env/server";
-import "@/shared/config/env/client";
+import createNextIntlPlugin from "next-intl/plugin";
 
-const nextConfig: NextConfig = {
-	/* config options here */
-	async headers() {
-		return [
-			{
-				source: "/(.*)",
-				headers: [{ key: "Access-Control-Allow-Origin", value: "*" }],
-			},
-		];
-	},
+const nextConfig: NextConfig = {};
+
+const withNextIntl = createNextIntlPlugin({
+	requestConfig: "./src/shared/config/i18n/request.ts",
 	experimental: {
-		// typedRoutes: true,
+		createMessagesDeclaration: "./messages/en.json",
 	},
-};
-
-export default nextConfig;
+});
+export default withNextIntl(nextConfig);

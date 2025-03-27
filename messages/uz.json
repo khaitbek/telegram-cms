@@ -1,0 +1,12 @@
+{
+  "HomePage": {
+    "title": "Salom!",
+    "about": "About ga o'tish"
+  },
+  "Widgets": {
+    "LocaleSwitcher": {
+      "label": "Tilni o'zgartirish",
+      "locale": "{locale}"
+    }
+  }
+}

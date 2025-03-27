@@ -1,0 +1,12 @@
+{
+  "HomePage": {
+    "title": "Hello world!",
+    "about": "Go to the about page"
+  },
+  "Widgets": {
+    "LocaleSwitcher": {
+      "label": "Change language",
+      "locale": "{locale}"
+    }
+  }
+}

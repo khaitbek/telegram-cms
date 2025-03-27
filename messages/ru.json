@@ -1,0 +1,12 @@
+{
+  "HomePage": {
+    "title": "Privet",
+    "about": "gov tu ebaut"
+  },
+  "Widgets": {
+    "LocaleSwitcher": {
+      "label": "Izmenit yazik",
+      "locale": "{locale}"
+    }
+  }
+}
