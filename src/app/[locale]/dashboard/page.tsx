@@ -1,7 +1,13 @@
-export default function Page() {
-  return (
-    <>
-      <h1>Hey, we're logged in!</h1>
-    </>
-  );
+import { trpc } from "@/server/trpc/caller";
+
+export default async function Page() {
+	const greeting = await trpc.hello({
+		text: "world",
+	});
+
+	return (
+		<>
+			<h1>{greeting.greeting}!</h1>
+		</>
+	);
 }
