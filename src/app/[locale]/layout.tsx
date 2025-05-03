@@ -1,5 +1,6 @@
 import "@/app/globals.css";
 import { routing } from "@/shared/config/i18n/routing";
+import { Toaster } from "@/shared/ui/sonner";
 import type { Metadata } from "next";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { Geist } from "next/font/google";
@@ -35,7 +36,10 @@ export default async function RootLayout({
 			<body className={`${geistSans.variable} antialiased`}>
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 					<TRPCProvider>
-						<NextIntlClientProvider>{children}</NextIntlClientProvider>
+						<NextIntlClientProvider>
+							{children}
+							<Toaster />
+						</NextIntlClientProvider>
 					</TRPCProvider>
 				</ThemeProvider>
 			</body>

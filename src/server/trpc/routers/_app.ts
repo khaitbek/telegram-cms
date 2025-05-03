@@ -1,16 +1,8 @@
-import { z } from "zod";
-import { baseTRPCProcedure, createTRPCRouter } from "../init";
+import { createTRPCRouter } from "../init";
+import { channelRouter } from "./channel";
 
 const appRouter = createTRPCRouter({
-	hello: baseTRPCProcedure
-		.input(
-			z.object({
-				text: z.string(),
-			}),
-		)
-		.query(({ input }) => ({
-			greeting: `Hello ${input.text}`,
-		})),
+	channel: channelRouter,
 });
 
 type AppRouter = typeof appRouter;

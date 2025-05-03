@@ -55,3 +55,19 @@ export const verification = pgTable("verification", {
 	createdAt: timestamp("created_at"),
 	updatedAt: timestamp("updated_at"),
 });
+
+export const channel = pgTable("channel", {
+	id: integer("id").primaryKey().generatedByDefaultAsIdentity({
+		name: "channel_id_seq",
+		startWith: 1,
+		increment: 1,
+	}),
+	username: text("username").notNull(),
+	botToken: text("botToken").notNull(),
+	name: text("name").notNull(),
+	createdBy: text("createdBy")
+		.notNull()
+		.references(() => user.id, {
+			onDelete: "cascade",
+		}),
+});
